@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div>
+    <div class="row welcome-message-row">
+        <div class="col-12">
+            <h1>Stock Screener</h1>
+        </div>
+    </div>
+    <div>
+        <form action="/stocks/" method="post">
+            <div>
+                <div class="row form-row">
+                    <div class="col-8">
+                        <label style="color: white;font-size: 30px; ">Symbol:</label>
+                        <br>
+                        {% csrf_token %}
+
+                        {{ form }}
+                    </div>
+                    <div class="col-4">
+                        <input class="submit_symbol_button" type="submit" value="Submit" />
+                    </div>
+
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endblock %}

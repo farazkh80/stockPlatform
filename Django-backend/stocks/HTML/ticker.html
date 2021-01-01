@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{ticker}} Info{% endblock %}
+{% block content %}
+<div class="stock-info">
+    
+    <div class="row stock-chart-row">
+        <div class="col-9">
+            <img class="stock-chart" src ="{% static 'Charts/' %}{{ticker}}_candleChart.png" alt="">
+        </div>
+        <div class="col-3 price-info-col">
+            <h1 style="font-size: 40px; color: white; padding: 20px;">{{price.longName}}</h1>
+            <span style="font-size: 20px; color:white; padding: 20px;">Sector: <span style="color: gray">{{profile.sector}}</span></span>
+            <br/>
+            <br />
+            <p style="display: inline;
+            font-size: 30px;
+            color: white;
+            padding: 20px;">{{price.regularMarketPrice.fmt}} USD</p>
+            <br />
+            <span style="font-size: 20px; color: white;  padding: 20px;">Volume: <span style="color: green">{{price.regularMarketVolume.fmt}}</span></span>
+            <br />
+            <br/>
+            <span style="font-size: 20px; color: white; padding: 20px;">Open:</span>
+            <p>{{price.regularMarketOpen.fmt}}</p>
+            <span style="font-size: 20px; color: green; padding: 20px;">High:</span>
+            <p>{{price.regularMarketDayHigh.fmt}}</p>
+            <br>
+            <span style="font-size: 20px; color: white; padding: 20px;">Close: </span>
+            <p>{{price.regularMarketPreviousClose.fmt}}</p>
+            <span style="font-size: 20px; color: red; padding: 20px;">Low: </span>
+            <p>{{price.regularMarketDayLow.fmt}}</p>
+        </div>
+
+    </div>
+    <div class="row stock-chart-row">
+        <div class="col-9">
+            <img class="stock-chart" src ="{% static 'Charts/' %}{{ticker}}_lineChart.png" alt="">
+        </div>
+        <div class="col-3 price-info-col">
+            <h1 style="font-size: 40px; color: white; padding: 20px;">{{price.longName}}</h1>
+            <span style="font-size: 20px; color:white; padding: 20px;">Sector: <span style="color: gray">{{profile.sector}}</span></span>
+            <br/>
+            <br />
+            <p style="display: inline;
+            font-size: 30px;
+            color: white;
+            padding: 20px;">{{price.regularMarketPrice.fmt}} USD</p>
+            <br />
+            <span style="font-size: 20px; color: white;  padding: 20px;">Volume: <span style="color: green">{{price.regularMarketVolume.fmt}}</span></span>
+            <br />
+            <br/>
+            <span style="font-size: 20px; color: white; padding: 20px;">Open:</span>
+            <p>{{price.regularMarketOpen.fmt}}</p>
+            <span style="font-size: 20px; color: green; padding: 20px;">High:</span>
+            <p>{{price.regularMarketDayHigh.fmt}}</p>
+            <br>
+            <span style="font-size: 20px; color: white; padding: 20px;">Close: </span>
+            <p>{{price.regularMarketPreviousClose.fmt}}</p>
+            <span style="font-size: 20px; color: red; padding: 20px;">Low: </span>
+            <p>{{price.regularMarketDayLow.fmt}}</p>
+        </div>
+
+    </div>
+    <div class="row stock-chart-row">
+        <div class="col-9">
+            <img class="stock-chart" src ="{% static 'Charts/' %}{{ticker}}_prediction.png" alt="">
+        </div>
+        <div class="col-3 price-info-col">
+            <h1 style="font-size: 40px; color: white; padding: 20px;">{{price.longName}}</h1>
+            <span style="font-size: 20px; color:white; padding: 20px;">Sector: <span style="color: gray">{{profile.sector}}</span></span>
+            <br/>
+            <br />
+            <p style="display: inline;
+            font-size: 30px;
+            color: white;
+            padding: 20px;">{{price.regularMarketPrice.fmt}} USD</p>
+            <br />
+            <span style="font-size: 20px; color: white;  padding: 20px;">Volume: <span style="color: green">{{price.regularMarketVolume.fmt}}</span></span>
+            <br />
+            <br/>
+            <span style="font-size: 20px; color: white; padding: 20px;">Open:</span>
+            <p>{{price.regularMarketOpen.fmt}}</p>
+            <span style="font-size: 20px; color: green; padding: 20px;">High:</span>
+            <p>{{price.regularMarketDayHigh.fmt}}</p>
+            <br>
+            <span style="font-size: 20px; color: white; padding: 20px;">Close: </span>
+            <p>{{price.regularMarketPreviousClose.fmt}}</p>
+            <span style="font-size: 20px; color: red; padding: 20px;">Low: </span>
+            <p>{{price.regularMarketDayLow.fmt}}</p>
+        </div>
+
+    </div>
+    <div class="row info-row">
+        <div class="col-8 general-info-col">
+            <h1>{{ price.longName }} ({{ ticker }})</h1>
+            <span style="color: green; font-size: 20px; padding: 50px;">Description:</span>
+            <p>{{profile.longBusinessSummary}}</p>
+        </div>
+       
+
+
+    </div>
+
+</div>
+
+{% endblock %}

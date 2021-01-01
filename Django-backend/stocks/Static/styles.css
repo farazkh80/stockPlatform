@@ -1,0 +1,93 @@
+body{
+    background-color: black;
+}
+
+.welcome-message-row{
+    margin-top: 200px;
+}
+.welcome-message-row h1{
+    text-align: center;
+    color: white;
+    font-size: 40px;
+}
+.stock-info{
+    width: 100%;
+    min-height: 1500px;
+}
+.form-row{
+    margin: auto;
+    margin-top: 100px;
+    width: 50%;
+    height: 200px;
+    align-items: center;
+}
+
+.symbol_field{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    height:50px;
+    width: 100%;
+    border-radius: 20px;
+    border: 2px solid green; 
+}
+
+.submit_symbol_button{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 30px;
+    height: 40px;
+    width: 130px;
+    border-radius: 20px;
+    background-color: green;
+    color: white;
+}
+
+.info-row{
+    width: 100%;
+    min-height: 600px;
+    margin: auto;
+    
+}
+
+.general-info-col{
+    min-height: 400px;
+    width: 100%;
+}
+
+.general-info-col h1{
+    font-size: 30px;
+    color: white;
+    padding:50px;
+}
+
+.general-info-col p{
+    font-size: 20px;
+    color: white;
+    padding: 50px;
+}
+
+.price-info-col{
+
+    margin-top:100px;
+    min-height: 400px;
+    width: 100%;
+}
+
+.price-info-col p{
+    display: inline;
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+}
+
+.stock-chart-row{
+    width: 100%;
+    min-height: 600px;
+    margin: auto;
+}
+
+.stock-chart{
+    width: 100%;
+    height: 80%;
+}
+
