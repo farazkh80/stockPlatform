@@ -6,94 +6,18 @@
     
     <div class="row stock-chart-row">
         <div class="col-9">
-            <img class="stock-chart" src ="{% static 'Charts/' %}{{ticker}}_candleChart.png" alt="">
-        </div>
-        <div class="col-3 price-info-col">
-            <h1 style="font-size: 40px; color: white; padding: 20px;">{{price.longName}}</h1>
-            <span style="font-size: 20px; color:white; padding: 20px;">Sector: <span style="color: gray">{{profile.sector}}</span></span>
-            <br/>
-            <br />
-            <p style="display: inline;
-            font-size: 30px;
-            color: white;
-            padding: 20px;">{{price.regularMarketPrice.fmt}} USD</p>
-            <br />
-            <span style="font-size: 20px; color: white;  padding: 20px;">Volume: <span style="color: green">{{price.regularMarketVolume.fmt}}</span></span>
-            <br />
-            <br/>
-            <span style="font-size: 20px; color: white; padding: 20px;">Open:</span>
-            <p>{{price.regularMarketOpen.fmt}}</p>
-            <span style="font-size: 20px; color: green; padding: 20px;">High:</span>
-            <p>{{price.regularMarketDayHigh.fmt}}</p>
-            <br>
-            <span style="font-size: 20px; color: white; padding: 20px;">Close: </span>
-            <p>{{price.regularMarketPreviousClose.fmt}}</p>
-            <span style="font-size: 20px; color: red; padding: 20px;">Low: </span>
-            <p>{{price.regularMarketDayLow.fmt}}</p>
-        </div>
+            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            <img class="stock-chart" id="candle_stick_chart" src ="{% static 'Charts/' %}{{ticker}}_candleChart.png" alt="">
+            <img class="stock-chart" id="line_chart" src ="{% static 'Charts/' %}{{ticker}}_lineChart.png" alt="">
+            <img class="stock-chart" id="past_predictions_chart" src ="{% static 'Charts/' %}{{ticker}}_past_predictions.png" alt="">
+            <img class="stock-chart" id="future_predictions_chart" src ="{% static 'Charts/' %}{{ticker}}_future_predictions.png" alt="">
+            <div class="btn-group">
+                <button id="candle_chart_btn">Candle Stick</button>
+                <button id="line_chart_btn">Line</button>
+                <button id="past_predictions_chart_btn">Past Predictions</button>
+                <button id="future_predictions_chart_btn">Future Predictions</button>
+            </div>
 
-    </div>
-    <div class="row stock-chart-row">
-        <div class="col-9">
-            <img class="stock-chart" src ="{% static 'Charts/' %}{{ticker}}_lineChart.png" alt="">
-        </div>
-        <div class="col-3 price-info-col">
-            <h1 style="font-size: 40px; color: white; padding: 20px;">{{price.longName}}</h1>
-            <span style="font-size: 20px; color:white; padding: 20px;">Sector: <span style="color: gray">{{profile.sector}}</span></span>
-            <br/>
-            <br />
-            <p style="display: inline;
-            font-size: 30px;
-            color: white;
-            padding: 20px;">{{price.regularMarketPrice.fmt}} USD</p>
-            <br />
-            <span style="font-size: 20px; color: white;  padding: 20px;">Volume: <span style="color: green">{{price.regularMarketVolume.fmt}}</span></span>
-            <br />
-            <br/>
-            <span style="font-size: 20px; color: white; padding: 20px;">Open:</span>
-            <p>{{price.regularMarketOpen.fmt}}</p>
-            <span style="font-size: 20px; color: green; padding: 20px;">High:</span>
-            <p>{{price.regularMarketDayHigh.fmt}}</p>
-            <br>
-            <span style="font-size: 20px; color: white; padding: 20px;">Close: </span>
-            <p>{{price.regularMarketPreviousClose.fmt}}</p>
-            <span style="font-size: 20px; color: red; padding: 20px;">Low: </span>
-            <p>{{price.regularMarketDayLow.fmt}}</p>
-        </div>
-
-    </div>
-    <div class="row stock-chart-row">
-        <div class="col-9">
-            <img class="stock-chart" src ="{% static 'Charts/' %}{{ticker}}_past_predictions.png" alt="">
-        </div>
-        <div class="col-3 price-info-col">
-            <h1 style="font-size: 40px; color: white; padding: 20px;">{{price.longName}}</h1>
-            <span style="font-size: 20px; color:white; padding: 20px;">Sector: <span style="color: gray">{{profile.sector}}</span></span>
-            <br/>
-            <br />
-            <p style="display: inline;
-            font-size: 30px;
-            color: white;
-            padding: 20px;">{{price.regularMarketPrice.fmt}} USD</p>
-            <br />
-            <span style="font-size: 20px; color: white;  padding: 20px;">Volume: <span style="color: green">{{price.regularMarketVolume.fmt}}</span></span>
-            <br />
-            <br/>
-            <span style="font-size: 20px; color: white; padding: 20px;">Open:</span>
-            <p>{{price.regularMarketOpen.fmt}}</p>
-            <span style="font-size: 20px; color: green; padding: 20px;">High:</span>
-            <p>{{price.regularMarketDayHigh.fmt}}</p>
-            <br>
-            <span style="font-size: 20px; color: white; padding: 20px;">Close: </span>
-            <p>{{price.regularMarketPreviousClose.fmt}}</p>
-            <span style="font-size: 20px; color: red; padding: 20px;">Low: </span>
-            <p>{{price.regularMarketDayLow.fmt}}</p>
-        </div>
-
-    </div>
-    <div class="row stock-chart-row">
-        <div class="col-9">
-            <img class="stock-chart" src ="{% static 'Charts/' %}{{ticker}}_future_predictions.png" alt="">
         </div>
         <div class="col-3 price-info-col">
             <h1 style="font-size: 40px; color: white; padding: 20px;">{{price.longName}}</h1>
