@@ -99,7 +99,6 @@ def make_company_candle_char(stock):
 
     plt.savefig('stocks/Static/charts/'+stock+ "_candleChart")
 
-    #return ('stocks/Static/charts/'+stock)
 
 def make_company_line_char(stock):
 
