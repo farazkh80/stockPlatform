@@ -1,1 +1,3 @@
 /Django-backend/venv/
+/Django-backend/core/__pycache__
+/Django-backend/stocks/__pycache__
