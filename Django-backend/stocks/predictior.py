@@ -108,10 +108,7 @@ def get_future_predictions(dataset, scaled_data, training_data_len, model, scale
     return predictions
     
 
-def train(stock, decimal):
-    start = datetime(2012, 12, 31)
-    end = datetime.now()
-
+def train(stock, start, end, decimal):
     df = web.DataReader(stock, data_source='yahoo',
                     start=start, end=end)
     
@@ -164,9 +161,9 @@ def train(stock, decimal):
     return data, dataset, scaled_data, training_data_len, model, scaler
 
 
-def plot_past_predictions(stock):
+def plot_past_predictions(stock, start, end):
 
-    data, dataset, scaled_data, training_data_len, model, scaler = train(stock, 0.8)
+    data, dataset, scaled_data, training_data_len, model, scaler = train(stock,start, end, 0.8)
 
     predictions = get_past_predictions(dataset, scaled_data, training_data_len, model, scaler)
 
@@ -186,10 +183,12 @@ def plot_past_predictions(stock):
     
     plt.savefig('stocks/Static/charts/'+stock + "_past_predictions")
 
-def plot_future_predictions(stock):
+def plot_future_predictions(stock, start):
 
-    future_period = 365 
-    data, dataset, scaled_data, training_data_len, model, scaler = train(stock, 1.0)
+    future_period = 120
+    start = start
+    end = datetime.now()
+    data, dataset, scaled_data, training_data_len, model, scaler = train(stock, start, end, 1.0)
     predictions = get_future_predictions(dataset, scaled_data, training_data_len, model, scaler, future_period)
 
 

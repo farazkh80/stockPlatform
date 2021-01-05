@@ -23,23 +23,41 @@ body{
 }
 
 .symbol_field{
-    margin-left: 50%;
-    transform: translateX(-50%);
-    height:50px;
-    width: 100%;
+    height:40px;
+    width: 800px;
     border-radius: 20px;
     border: 2px solid green; 
 }
-
+.start_date_field{
+    margin-left: 10px;
+    height:40px;
+    width: 200px;
+    border-radius: 20px;
+    border: 2px solid green;
+}
+.end_date_field{
+  margin-left: 10px;
+  height:40px;
+  width: 200px;
+  border-radius: 20px;
+  border: 2px solid green;
+}
 .submit_symbol_button{
     margin-left: 50%;
     transform: translateX(-50%);
-    margin-top: 30px;
     height: 40px;
     width: 130px;
     border-radius: 20px;
     background-color: green;
     color: white;
+}
+.submit_symbol_button_from_ticker{
+  height: 40px;
+  width: 130px;
+  margin-left: 60px;
+  border-radius: 20px;
+  background-color: green;
+  color: white;
 }
 
 .info-row{
@@ -82,13 +100,13 @@ body{
 
 .stock-chart-row{
     width: 100%;
-    min-height: 700px;
+    min-height: 900px;
     margin: auto;
 }
 
 .stock-chart{
     width: 100%;
-    height: 600px;
+    height: 800px;
     margin:0;
 }
 .btn-group{
@@ -123,7 +141,7 @@ body{
     display: inline-block;
     margin-left: 50%;
     transform: translateX("-50%");
-    margin-top: 250px;
+    margin-top: 350px;
     width: 80px;
     height: 80px;
   }
@@ -156,3 +174,9 @@ body{
       transform: rotate(360deg);
     }
   }
+
+.stock-symbol-col{
+  margin-top: 50px;
+  width: 100%;
+  height: 100px;
+}

@@ -15,8 +15,19 @@
                         <label style="color: white;font-size: 30px; ">Symbol:</label>
                         <br>
                         {% csrf_token %}
+                        {{ form.ticker }}
 
-                        {{ form }}
+                        <br/>
+                        <br/>
+                        <br/>
+
+                        <label style="color: white;font-size: 20px; ">Start Date:</label>
+                        {{ form.start_date }}
+
+                        <label style="color: white;font-size: 20px; margin-left: 100px;">End Date:</label>
+                        {{ form.end_date }}
+                        
+
                     </div>
                     <div class="col-4">
                         <input class="submit_symbol_button" type="submit" value="Submit" />

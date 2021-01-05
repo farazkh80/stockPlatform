@@ -1,16 +1,43 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}{{ticker}} Info{% endblock %}
+{% block title %}{{ticker}}{% endblock %}
 {% block content %}
 <div class="stock-info">
-    
+    <div class="row stock-search=row">
+        <div class="col-12 stock-symbol-col">
+                <label style="color: white;font-size: 20px; margin-left: 60px;">Symbol:</label>
+                {% csrf_token %}
+                {{ form.ticker }}
+                <input type="text" name="ticker" class="symbol_field" maxlength="5" required="" id="id_ticker" autocomplete="off">
+
+
+                <label style="color: white;font-size: 20px; margin-left: 30px;">Start Date:</label>
+                <input type="text" name="start_date" class="start_date_field" maxlength="10" required=""
+                    id="id_start_date" autocomplete="off">
+
+                <label style="color: white;font-size: 20px; margin-left: 30px;">End Date:</label>
+                <input type="text" name="end_date" class="end_date_field" maxlength="10" required="" id="id_end_date" autocomplete="off">
+
+
+                <input class="submit_symbol_button_from_ticker" type="submit" value="Search" />
+
+        </div>
+    </div>
     <div class="row stock-chart-row">
         <div class="col-9">
-            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-            <img class="stock-chart" id="candle_stick_chart" src ="{% static 'Charts/' %}{{ticker}}_candleChart.png" alt="">
-            <img class="stock-chart" id="line_chart" src ="{% static 'Charts/' %}{{ticker}}_lineChart.png" alt="">
-            <img class="stock-chart" id="past_predictions_chart" src ="{% static 'Charts/' %}{{ticker}}_past_predictions.png" alt="">
-            <img class="stock-chart" id="future_predictions_chart" src ="{% static 'Charts/' %}{{ticker}}_future_predictions.png" alt="">
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <img class="stock-chart" id="candle_stick_chart" src="{% static 'Charts/' %}{{ticker}}_candleChart.png"
+                alt="">
+            <img class="stock-chart" id="line_chart" src="{% static 'Charts/' %}{{ticker}}_lineChart.png" alt="">
+            <img class="stock-chart" id="past_predictions_chart"
+                src="{% static 'Charts/' %}{{ticker}}_past_predictions.png" alt="">
+            <img class="stock-chart" id="future_predictions_chart"
+                src="{% static 'Charts/' %}{{ticker}}_future_predictions.png" alt="">
             <div class="btn-group">
                 <button id="candle_chart_btn">Candle Stick</button>
                 <button id="line_chart_btn">Line</button>
@@ -21,17 +48,19 @@
         </div>
         <div class="col-3 price-info-col">
             <h1 style="font-size: 40px; color: white; padding: 20px;">{{price.longName}}</h1>
-            <span style="font-size: 20px; color:white; padding: 20px;">Sector: <span style="color: gray">{{profile.sector}}</span></span>
-            <br/>
+            <span style="font-size: 20px; color:white; padding: 20px;">Sector: <span
+                    style="color: gray">{{profile.sector}}</span></span>
+            <br />
             <br />
             <p style="display: inline;
             font-size: 30px;
             color: white;
             padding: 20px;">{{price.regularMarketPrice.fmt}} USD</p>
             <br />
-            <span style="font-size: 20px; color: white;  padding: 20px;">Volume: <span style="color: green">{{price.regularMarketVolume.fmt}}</span></span>
+            <span style="font-size: 20px; color: white;  padding: 20px;">Volume: <span
+                    style="color: green">{{price.regularMarketVolume.fmt}}</span></span>
             <br />
-            <br/>
+            <br />
             <span style="font-size: 20px; color: white; padding: 20px;">Open:</span>
             <p>{{price.regularMarketOpen.fmt}}</p>
             <span style="font-size: 20px; color: green; padding: 20px;">High:</span>
@@ -50,7 +79,7 @@
             <span style="color: green; font-size: 20px; padding: 50px;">Description:</span>
             <p>{{profile.longBusinessSummary}}</p>
         </div>
-       
+
 
 
     </div>

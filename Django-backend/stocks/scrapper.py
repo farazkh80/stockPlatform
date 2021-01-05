@@ -64,11 +64,7 @@ def get_price_data(stock):
     return price
 
 
-def make_company_candle_char(stock):
-
-    start = datetime(2019, 12, 31)
-    end = datetime.now()
-
+def make_company_candle_char(stock, start, end):
     plt.style.use('dark_background')
 
     plt.figure(figsize=(8, 6))
@@ -100,11 +96,7 @@ def make_company_candle_char(stock):
     plt.savefig('stocks/Static/charts/'+stock+ "_candleChart")
 
 
-def make_company_line_char(stock):
-
-    start = datetime(2019, 12, 31)
-    end = datetime.now()
-
+def make_company_line_char(stock, start, end):
     plt.style.use('dark_background')
 
 
