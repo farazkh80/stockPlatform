@@ -7,16 +7,16 @@
         <div class="col-12 stock-symbol-col">
                 <label style="color: white;font-size: 20px; margin-left: 60px;">Symbol:</label>
                 {% csrf_token %}
-                {{ form.ticker }}
-                <input type="text" name="ticker" class="symbol_field" maxlength="5" required="" id="id_ticker" autocomplete="off">
+
+                <input type="text" name="ticker" class="symbol_field_ticker" maxlength="5" required="" id="id_ticker" autocomplete="off">
 
 
                 <label style="color: white;font-size: 20px; margin-left: 30px;">Start Date:</label>
-                <input type="text" name="start_date" class="start_date_field" maxlength="10" required=""
+                <input type="text" name="start_date" class="start_date_field_ticker" maxlength="10" required=""
                     id="id_start_date" autocomplete="off">
 
                 <label style="color: white;font-size: 20px; margin-left: 30px;">End Date:</label>
-                <input type="text" name="end_date" class="end_date_field" maxlength="10" required="" id="id_end_date" autocomplete="off">
+                <input type="text" name="end_date" class="end_date_field_ticker" maxlength="10" required="" id="id_end_date" autocomplete="off">
 
 
                 <input class="submit_symbol_button_from_ticker" type="submit" value="Search" />

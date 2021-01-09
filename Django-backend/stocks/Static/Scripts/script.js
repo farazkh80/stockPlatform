@@ -90,7 +90,7 @@ $(document).ready(function () {
 
     $(".submit_symbol_button_from_ticker").click(function() {
         console.log( $(".symbol_field").val())
-        var url = "http://127.0.0.1:8000/stocks/" + $(".symbol_field").val() + "/" + $(".start_date_field").val() + "_to_" + $(".end_date_field").val();
+        var url = "http://127.0.0.1:8000/" + $(".symbol_field").val() + "/" + $(".start_date_field").val() + "_to_" + $(".end_date_field").val();
         window.location.href = url;
     });
 

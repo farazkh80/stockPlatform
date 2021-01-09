@@ -17,14 +17,14 @@ body{
 .form-row{
     margin: auto;
     margin-top: 100px;
-    width: 50%;
+    width: 80%;
     height: 200px;
     align-items: center;
 }
 
 .symbol_field{
     height:40px;
-    width: 800px;
+    width: 100%;
     border-radius: 20px;
     border: 2px solid green; 
 }
@@ -43,14 +43,38 @@ body{
   border: 2px solid green;
 }
 .submit_symbol_button{
+    position: absolute;
+    bottom: 10px;
     margin-left: 50%;
     transform: translateX(-50%);
     height: 40px;
-    width: 130px;
+    width: 200px;
     border-radius: 20px;
     background-color: green;
     color: white;
 }
+
+.symbol_field_ticker{
+  height:40px;
+  width: 800px;
+  border-radius: 20px;
+  border: 2px solid green; 
+}
+.start_date_field_ticker{
+  margin-left: 10px;
+  height:40px;
+  width: 200px;
+  border-radius: 20px;
+  border: 2px solid green;
+}
+.end_date_field_ticker{
+margin-left: 10px;
+height:40px;
+width: 200px;
+border-radius: 20px;
+border: 2px solid green;
+}
+
 .submit_symbol_button_from_ticker{
   height: 40px;
   width: 130px;

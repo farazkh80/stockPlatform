@@ -185,7 +185,7 @@ def plot_past_predictions(stock, start, end):
 
 def plot_future_predictions(stock, start):
 
-    future_period = 120
+    future_period = 365
     start = start
     end = datetime.now()
     data, dataset, scaled_data, training_data_len, model, scaler = train(stock, start, end, 1.0)
