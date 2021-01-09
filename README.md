@@ -44,13 +44,13 @@ python manage.py runserver
 Next go to the URL http://127.0.0.1:8000/stocks/ and fill in the required fields to start the stock screening.
 \
 \
-![Home](visuals/home.png)
+![Home](visuals/home.PNG)
 \
 \
 Upon starting the search you will be redirected to a page with the stock information and charts.  <span style="color:red">(due to data training this process can take 1-2 minutes)</span>
 \
 \
-![Screener](visuals/screen.png)
+![Screener](visuals/screen.PNG)
 \
 \
 To view the past and future predictions, simply click on the related tabs on the bottom right.
