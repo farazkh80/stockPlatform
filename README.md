@@ -7,9 +7,21 @@ First navigate to the djnago folder with the following command.
 
 ```bash
 cd Djnago-backend
+
+```
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install virtual environnement.
+
+```bash
+python -m pip install virtualenv
 ```
 
-Next activate the virtual environment using.
+Next create virtual environment using.
+
+```bash
+virtualenv venv
+```
+
+Finally, activate your venv.
 
 ```bash
 venv/Scripts/activate
