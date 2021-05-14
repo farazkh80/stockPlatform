@@ -90,7 +90,9 @@ Please make sure to update tests as appropriate.
 
 1- The main aim is to design the LSTM model in a more flexible way, such that it adjusts itself according the condition of the market and the volume. adding more deciding factors rather on focusing only on prices.
 
-2- Increasing the speed and efficiency of them model.
+2- Increasing the speed and efficiency of the model.
+
+3- Developing an interactive UI with React.js.
 
 
 ## License
