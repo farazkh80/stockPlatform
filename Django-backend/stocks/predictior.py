@@ -1,22 +1,10 @@
-import re
-import json
-import csv
-from io import StringIO
-from bs4 import BeautifulSoup
-import requests
-import os
 import math
 import pandas_datareader as web
 import numpy as np
-import pandas as pd
-from pandas import Timestamp
 from sklearn.preprocessing import MinMaxScaler
 from keras.models import Sequential
 from keras.layers import Dense, LSTM
 import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-from mpl_finance import candlestick_ohlc
-import matplotlib.dates as mpl_dates
 from datetime import timedelta, datetime
 
 
@@ -180,7 +168,6 @@ def plot_past_predictions(stock, start, end):
     plt.plot(trained['Close'])
     plt.plot(valid[['Close', 'Predictions']])
     plt.legend(['Train', 'Val', 'Predictions'], loc='lower right')
-    
     plt.savefig('stocks/Static/charts/'+stock + "_past_predictions")
 
 def plot_future_predictions(stock, start):
@@ -211,7 +198,6 @@ def plot_future_predictions(stock, start):
     plt.plot(trained['Close'], color="blue")
     plt.plot(valid[['Predictions']], color="red")
     plt.legend(['Train', 'Val', 'Predictions'], loc='lower right')
-
     plt.savefig('stocks/Static/charts/'+stock + "_future_predictions")
 
 

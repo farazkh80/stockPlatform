@@ -28,6 +28,6 @@ def ticker(request, tid, range):
     context['price']=get_price_data(tid)
     make_company_candle_char(tid, start, end)
     make_company_line_char(tid, start, end)
-    # plot_past_predictions(tid, start, end)
-    # plot_future_predictions(tid, start)
+    plot_past_predictions(tid, start, end)
+    plot_future_predictions(tid, start)
     return render(request, 'ticker.html', context)  

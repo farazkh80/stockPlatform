@@ -1,32 +1,27 @@
 import re
 import json
-import csv
 import requests
-import os
-import math
 from io import StringIO
 from bs4 import BeautifulSoup
 import pandas_datareader as web
 import numpy as np
 import pandas as pd
+from requests.api import head
 from sklearn.preprocessing import MinMaxScaler
 from keras.models import Sequential
 from keras.layers import Dense, LSTM
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from mpl_finance import candlestick_ohlc
-import matplotlib.dates as mpl_dates
-from datetime import datetime
 
 
-url_profile = 'https://ca.finance.yahoo.com/quote/{}/profile?p={}'
-url_financials = 'https://ca.finance.yahoo.com/quote/{}/financials?p={}'
-url_history = 'https://query1.finance.yahoo.com/v7/finance/download/{}?'
-
+url_profile = 'https://finance.yahoo.com/quote/{}/profile?p={}'
+url_financials = 'https://finance.yahoo.com/quote/{}/financials?p={}'
+headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'}
 
 def get_company_profile(stock):
-    response = requests.get(url_profile.format(stock, stock))
-    soup = BeautifulSoup(response.text, 'html.parser')
+    response = requests.get(url_profile.format(stock, stock), headers=headers, timeout=5).text
+    soup = BeautifulSoup(response, 'html.parser')
     pattern = re.compile(r'\s--\sData\s--\s')
     script_data = soup.find('script', text=pattern).contents[0]
 
@@ -40,13 +35,15 @@ def get_company_profile(stock):
 
     # Asset Profile
     assetProfile = json_data['context']['dispatcher']['stores']['QuoteSummaryStore']['assetProfile']
+    with open('test.json', 'w+') as f:
+        f.write(str(assetProfile))
 
     return assetProfile
 
 
 def get_price_data(stock):
-    response = requests.get(url_profile.format(stock, stock))
-    soup = BeautifulSoup(response.text, 'html.parser')
+    response = requests.get(url_profile.format(stock, stock), headers=headers, timeout=5).text
+    soup = BeautifulSoup(response, 'html.parser')
     pattern = re.compile(r'\s--\sData\s--\s')
     script_data = soup.find('script', text=pattern).contents[0]
 
@@ -88,10 +85,9 @@ def make_company_candle_char(stock, start, end):
 
     candlestick_ohlc(ax, data.values, width=1, colorup="green")
 
-    # data['SMA5'] = data['Close'].rolling(5).mean()
-    # ax.plot(data['Date'], data['SMA5'], color='purple', label='SMA5')
-
-    # plt.legend()
+    data['SMA5'] = data['Close'].rolling(5).mean()
+    ax.plot(data['Date'], data['SMA5'], color='purple', label='SMA5')
+    plt.legend()
 
     plt.savefig('stocks/Static/charts/'+stock+ "_candleChart")
 
@@ -110,4 +106,3 @@ def make_company_line_char(stock, start, end):
     plt.ylabel('Closing Price', fontsize=18)
 
     plt.savefig('stocks/Static/charts/'+stock + "_lineChart")
-
